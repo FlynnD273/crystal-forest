@@ -1,0 +1,172 @@
+# Blender 4.2.0 MTL File: 'baked-components.blend'
+# www.blender.org
+
+newmtl Ground-bake
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd Textures/Ground-bake.png
+map_d Textures/Ground-bake.png
+
+newmtl Rock-bake
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd Textures/Rock-bake.png
+map_d Textures/Rock-bake.png
+
+newmtl Rock.001-bake
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd Textures/Rock.001-bake.png
+map_d Textures/Rock.001-bake.png
+
+newmtl Rock.002-bake
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd Textures/Rock.002-bake.png
+map_d Textures/Rock.002-bake.png
+
+newmtl Rock.003-bake
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd Textures/Rock.003-bake.png
+map_d Textures/Rock.003-bake.png
+
+newmtl Rock.004-bake
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd Textures/Rock.004-bake.png
+map_d Textures/Rock.004-bake.png
+
+newmtl Rock.005-bake
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd Textures/Rock.005-bake.png
+map_d Textures/Rock.005-bake.png
+
+newmtl Rock.006-bake
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd Textures/Rock.006-bake.png
+map_d Textures/Rock.006-bake.png
+
+newmtl Rock.007-bake
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd Textures/Rock.007-bake.png
+map_d Textures/Rock.007-bake.png
+
+newmtl Rock.008-bake
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd Textures/Rock.008-bake.png
+map_d Textures/Rock.008-bake.png
+
+newmtl Rock.009-bake
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd Textures/Rock.009-bake.png
+map_d Textures/Rock.009-bake.png
+
+newmtl Rock.010-bake
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd Textures/Rock.010-bake.png
+map_d Textures/Rock.010-bake.png
+
+newmtl Rock.011-bake
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd Textures/Rock.011-bake.png
+map_d Textures/Rock.011-bake.png
+
+newmtl Tree-bake
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd Textures/Tree-bake.png
+map_d Textures/Tree-bake.png
+
+newmtl Tree.001-bake
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd Textures/Tree.001-bake.png
+map_d Textures/Tree.001-bake.png
+
+newmtl Tree.002-bake
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd Textures/Tree.002-bake.png
+map_d Textures/Tree.002-bake.png
+
+newmtl Tree.003-bake
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd Textures/Tree.003-bake.png
+map_d Textures/Tree.003-bake.png

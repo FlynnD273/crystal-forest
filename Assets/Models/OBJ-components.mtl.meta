@@ -1,0 +1,117 @@
+fileFormatVersion: 2
+guid: ff2f5634d50e1ed44b177af06914d40b
+DefaultImporter:
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Tree.003-bake
+    second: {fileID: 2100000, guid: 5a21c9344cdc6b44086c7480439c6592, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Tree.002-bake
+    second: {fileID: 2100000, guid: 934231672c4981e4a9866fc6d22943ee, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Tree.001-bake
+    second: {fileID: 2100000, guid: 7d8c442b66bf69140bb6d53762756f10, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Tree-bake
+    second: {fileID: 2100000, guid: 3b59c0dc9b2ef9b49ada4db2edf1bf1c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Rock.011-bake
+    second: {fileID: 2100000, guid: c082e4680f2e9b34da06e683e7b12195, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Rock.010-bake
+    second: {fileID: 2100000, guid: 20ecce3c6cee3ef4295be4c51da9b6dc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Rock.009-bake
+    second: {fileID: 2100000, guid: 2ab86e2ef444f7d41ab598b54e49669b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Rock.008-bake
+    second: {fileID: 2100000, guid: 15e596ec5fc4b144ab692d2f3f7f8fb0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Rock.007-bake
+    second: {fileID: 2100000, guid: eec1cb654a7e0844c876ac9c4c98d15d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Rock.006-bake
+    second: {fileID: 2100000, guid: 2167f0240d055e54391fa2bb5df2f27d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Rock.005-bake
+    second: {fileID: 2100000, guid: a54d5f382f4147044acb37ae2699fe72, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Rock.004-bake
+    second: {fileID: 2100000, guid: 566dad242a075a54ca3afd55b774fb8f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Rock.003-bake
+    second: {fileID: 2100000, guid: 4e0cc5ca198c50149b55f57dc91190ce, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Rock.002-bake
+    second: {fileID: 2100000, guid: aad32d3d8746c6d4bb5ea8686e09d0f9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Rock.001-bake
+    second: {fileID: 2100000, guid: f1d17cf00b14eb64fb0799955ca67a24, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Rock-bake
+    second: {fileID: 2100000, guid: 5a4eb9bed6c94fc4fa89c3bbc13f3058, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Plane-bake
+    second: {fileID: 2100000, guid: 199f288727a0cef4fb7f1d12715127dd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: paint_5
+    second: {fileID: 2100000, guid: 7b3c90a2ae52c9d40a0ea0061ab779b0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: paint_4
+    second: {fileID: 2100000, guid: 473a9d2bb251fa74e8344ba45c067ebc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: paint_3
+    second: {fileID: 2100000, guid: a0f48d1ced7083d4698a2d66f80c3865, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: paint_2
+    second: {fileID: 2100000, guid: ef48d8f0da280d94895ec5dcfba53f03, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: paint_1
+    second: {fileID: 2100000, guid: 3a0140bce466b3e47b54a0eeba9246b6, type: 2}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
