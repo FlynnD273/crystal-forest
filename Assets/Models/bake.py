@@ -20,7 +20,7 @@ def shutdown() -> None:
 
 signal.signal(signal.SIGINT, lambda _, b: shutdown())
 
-tex_size = 8192
+tex_size = 2048
 
 output_dir = os.path.join(bpy.path.abspath("//"), "Textures")
 if not os.path.exists(output_dir):
@@ -95,9 +95,6 @@ def process_obj(obj):
     )
 
     # Unwrap to new UV map
-    for _ in range(len(obj.data.uv_layers)):
-        obj.data.uv_layers.remove(obj.data.uv_layers[0])
-    # obj.data.uv_layers.clear()
     obj.data.uv_layers.new(name=uvmap)
     obj.data.uv_layers.active = obj.data.uv_layers[uvmap]
     bpy.ops.object.mode_set(mode="EDIT")
@@ -128,11 +125,25 @@ for i, obj in enumerate(objs):
     if is_shutdown:
         break
 
+    bpy.ops.object.select_all(action="DESELECT")
+    bpy.context.view_layer.objects.active = obj
+    obj.select_set(True)
+    bpy.ops.object.mode_set(mode="OBJECT")
+    bpy.ops.object.make_single_user(
+        object=True, obdata=True, material=True, animation=True, obdata_animation=True
+    )
+
     for modifier in obj.modifiers:
         print("applying modifier", modifier.name)
         bpy.ops.object.modifier_apply(modifier=modifier.name)
 
+    for mat in obj.material_slots[:]:
+        if not mat:
+            print("Removing blank material")
+            obj.material_slots.remove(mat)
+
     if obj.material_slots is None or len(obj.material_slots) == 0:
+        print("Skipping", obj.name)
         continue
 
     avg = (time() - start_time) / (i + 1)
@@ -143,9 +154,9 @@ for i, obj in enumerate(objs):
     if is_shutdown:
         break
 
+    to_process.append(obj)
     diffuse_path = obj_to_path(obj)
     if os.path.exists(diffuse_path):
-        to_process.append(obj)
         continue
 
     process_obj(obj)
@@ -217,19 +228,23 @@ for i, obj in enumerate(objs):
 
         output_socket = nodes.get("Material Output").inputs[0]
 
+        has_alpha = False
         for link in tree.links:
             if link.to_socket == prince.inputs["Alpha"]:
                 tree.links.new(link.from_socket, output_socket)
+                has_alpha = True
+                break
+        if not has_alpha:
+            rgb_node = tree.nodes.new(type="ShaderNodeRGB")
+            rgb_node.outputs["Color"].default_value = (1.0, 1.0, 1.0, 1.0)
+            tree.links.new(rgb_node.outputs["Color"], output_socket)
 
     bpy.ops.object.bake(type="EMIT")
     alpha_path = os.path.join(output_dir, img_name + "_ALPHA.png")
     bake_image.filepath_raw = alpha_path
     bake_image.save()
 
-    if platform.system() == "Windows":
-        magick_cmd = ["magick", "convert"]
-    else:
-        magick_cmd = ["convert"]
+    magick_cmd = ["magick"]
     cmd = magick_cmd + [
         alpha_path,
         "-colorspace",
@@ -262,11 +277,13 @@ for i, obj in enumerate(objs):
 
 if not is_shutdown:
     start_time = time()
-    for i, obj in enumerate(objs):
+    for i, obj in enumerate(to_process):
         avg = (time() - start_time) / (i + 1)
         print(
             f"\rProcessing {obj.name} | {i + 1}/{len(objs)} Time left: {timedelta(seconds= avg * (len(objs) - i))}{' '*10}"
         )
+        for _ in range(len(obj.data.uv_layers)):
+            obj.data.uv_layers.remove(obj.data.uv_layers[0])
         process_obj(obj)
         obj.data.materials.clear()
         img_name = obj.name + "-bake"
