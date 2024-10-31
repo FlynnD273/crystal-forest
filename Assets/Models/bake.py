@@ -162,7 +162,7 @@ for i, obj in enumerate(objs):
     process_obj(obj)
 
     img_name = obj.name + "-bake"
-    scl_size = int(max(tex_size * obj_scl[i], 1))
+    scl_size = tex_size  # int(max(tex_size * obj_scl[i], 1))
     bpy.context.scene.render.resolution_x = scl_size
     bpy.context.scene.render.resolution_y = scl_size
     bpy.ops.image.new(name=img_name, width=scl_size, height=scl_size)
