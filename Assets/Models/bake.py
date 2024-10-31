@@ -20,7 +20,7 @@ def shutdown() -> None:
 
 signal.signal(signal.SIGINT, lambda _, b: shutdown())
 
-tex_size = 2048
+tex_size = 4096
 
 output_dir = os.path.join(bpy.path.abspath("//"), "Textures")
 if not os.path.exists(output_dir):
@@ -99,7 +99,7 @@ def process_obj(obj):
     obj.data.uv_layers.active = obj.data.uv_layers[uvmap]
     bpy.ops.object.mode_set(mode="EDIT")
     bpy.ops.mesh.select_all(action="SELECT")
-    bpy.ops.uv.smart_project()
+    bpy.ops.uv.lightmap_pack()
     bpy.ops.object.mode_set(mode="OBJECT")
 
 
