@@ -20,7 +20,7 @@ def shutdown() -> None:
 
 signal.signal(signal.SIGINT, lambda _, b: shutdown())
 
-tex_size = 4096
+tex_size = 256
 
 output_dir = os.path.join(bpy.path.abspath("//"), "Textures")
 if not os.path.exists(output_dir):
@@ -214,59 +214,59 @@ for i, obj in enumerate(objs):
     bake_image.filepath_raw = diffuse_path
     bake_image.save()
 
-    for slot in obj.material_slots:
-        material = slot.material
-        if material is None:
-            continue
+    # for slot in obj.material_slots:
+    #     material = slot.material
+    #     if material is None:
+    #         continue
 
-        tree, prince = get_inner_shader(material.node_tree)
-        if tree is None or prince is None:
-            problems.append(f"Object: {obj.name} Material: {material.name}")
-            continue
+    #     tree, prince = get_inner_shader(material.node_tree)
+    #     if tree is None or prince is None:
+    #         problems.append(f"Object: {obj.name} Material: {material.name}")
+    #         continue
 
-        nodes = tree.nodes
+    #     nodes = tree.nodes
 
-        output_socket = nodes.get("Material Output").inputs[0]
+    #     output_socket = nodes.get("Material Output").inputs[0]
 
-        has_alpha = False
-        for link in tree.links:
-            if link.to_socket == prince.inputs["Alpha"]:
-                tree.links.new(link.from_socket, output_socket)
-                has_alpha = True
-                break
-        if not has_alpha:
-            rgb_node = tree.nodes.new(type="ShaderNodeRGB")
-            rgb_node.outputs["Color"].default_value = (1.0, 1.0, 1.0, 1.0)
-            tree.links.new(rgb_node.outputs["Color"], output_socket)
+    #     has_alpha = False
+    #     for link in tree.links:
+    #         if link.to_socket == prince.inputs["Alpha"]:
+    #             tree.links.new(link.from_socket, output_socket)
+    #             has_alpha = True
+    #             break
+    #     if not has_alpha:
+    #         rgb_node = tree.nodes.new(type="ShaderNodeRGB")
+    #         rgb_node.outputs["Color"].default_value = (1.0, 1.0, 1.0, 1.0)
+    #         tree.links.new(rgb_node.outputs["Color"], output_socket)
 
-    bpy.ops.object.bake(type="EMIT")
-    alpha_path = os.path.join(output_dir, img_name + "_ALPHA.png")
-    bake_image.filepath_raw = alpha_path
-    bake_image.save()
+    # bpy.ops.object.bake(type="EMIT")
+    # alpha_path = os.path.join(output_dir, img_name + "_ALPHA.png")
+    # bake_image.filepath_raw = alpha_path
+    # bake_image.save()
 
-    magick_cmd = ["magick"]
-    cmd = magick_cmd + [
-        alpha_path,
-        "-colorspace",
-        "gray",
-        alpha_path,
-    ]
-    subprocess.run(cmd)
-    cmd = magick_cmd + [
-        diffuse_path,
-        alpha_path,
-        "-alpha",
-        "Off",
-        "-compose",
-        "CopyOpacity",
-        "-composite",
-        diffuse_path,
-    ]
-    subprocess.run(cmd)
-    os.remove(alpha_path)
+    # magick_cmd = ["magick"]
+    # cmd = magick_cmd + [
+    #     alpha_path,
+    #     "-colorspace",
+    #     "gray",
+    #     alpha_path,
+    # ]
+    # subprocess.run(cmd)
+    # cmd = magick_cmd + [
+    #     diffuse_path,
+    #     alpha_path,
+    #     "-alpha",
+    #     "Off",
+    #     "-compose",
+    #     "CopyOpacity",
+    #     "-composite",
+    #     diffuse_path,
+    # ]
+    # subprocess.run(cmd)
+    # os.remove(alpha_path)
 
-    for nodes, node in to_delete:
-        nodes.remove(node)
+    # for nodes, node in to_delete:
+    #     nodes.remove(node)
 
     bpy.data.images[img_name].gl_free()
     bpy.data.images.remove(bake_image)
@@ -282,8 +282,12 @@ if not is_shutdown:
         print(
             f"\rProcessing {obj.name} | {i + 1}/{len(objs)} Time left: {timedelta(seconds= avg * (len(objs) - i))}{' '*10}"
         )
+        idx = 0
         for _ in range(len(obj.data.uv_layers)):
-            obj.data.uv_layers.remove(obj.data.uv_layers[0])
+            if obj.data.uv_layers[idx].name == "UV":
+                idx += 1
+            else:
+                obj.data.uv_layers.remove(obj.data.uv_layers[idx])
         process_obj(obj)
         obj.data.materials.clear()
         img_name = obj.name + "-bake"
