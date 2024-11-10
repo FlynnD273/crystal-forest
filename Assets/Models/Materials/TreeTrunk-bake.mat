@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Rock.002-bake
+  m_Name: TreeTrunk-bake
   m_Shader: {fileID: -6465566751694194690, guid: 6862565128a7db6dd900da46094ead6d, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -38,7 +38,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _Albedo:
-        m_Texture: {fileID: 2800000, guid: 55790eac36ca3d862bcdb291a0bdeddc, type: 3}
+        m_Texture: {fileID: 2800000, guid: cb541650ec9dca04ca2e9e99c5830b4e, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BaseMap:
