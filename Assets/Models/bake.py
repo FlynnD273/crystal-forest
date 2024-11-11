@@ -288,6 +288,8 @@ if not is_shutdown:
                 idx += 1
             else:
                 obj.data.uv_layers.remove(obj.data.uv_layers[idx])
+        # for _ in range(1):
+        #     bpy.ops.mesh.uv_texture_add()
         process_obj(obj)
         obj.data.materials.clear()
         img_name = obj.name + "-bake"
