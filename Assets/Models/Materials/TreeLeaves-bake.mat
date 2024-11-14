@@ -31,8 +31,7 @@ Material:
   m_DoubleSidedGI: 1
   m_CustomRenderQueue: -1
   stringTagMap: {}
-  disabledShaderPasses:
-  - MOTIONVECTORS
+  disabledShaderPasses: []
   m_LockedProperties: 
   m_SavedProperties:
     serializedVersion: 3
@@ -118,6 +117,7 @@ Material:
     - _DstBlend: 0
     - _DstBlendAlpha: 0
     - _Emit: 0
+    - _Emit_Brightness: 10
     - _EnvironmentReflections: 1
     - _GlossMapScale: 0
     - _Glossiness: 0
