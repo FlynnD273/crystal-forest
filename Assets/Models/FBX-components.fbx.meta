@@ -3,7 +3,447 @@ guid: bf7f785dcd4da184c8d444d58b67ab30
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Trunk-bake
+    second: {fileID: 2100000, guid: 8d3494c2152c21e4e98136ef1f38182c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: TreeTrunk.002-bake
+    second: {fileID: 2100000, guid: 5f15136c4e8a4714891129a55bf9f7b1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: TreeTrunk.001-bake
+    second: {fileID: 2100000, guid: 97ff442861d0f284fb47cce41a91b089, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: TreeTrunk-bake
+    second: {fileID: 2100000, guid: 5965c19f2c385e0489e08c73bd6c9a9d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: TreeLeaves.002-bake
+    second: {fileID: 2100000, guid: e8e18ed683203b245b15ba542dfb254f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: TreeLeaves.001-bake
+    second: {fileID: 2100000, guid: 544f11971c9888e408b9be64b35f21b2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: TreeLeaves-bake
+    second: {fileID: 2100000, guid: 32192bbd8e253df4885ec221c1165506, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Rock.006-bake
+    second: {fileID: 2100000, guid: f1001af6e261852078da9856880b1994, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Rock.005-bake
+    second: {fileID: 2100000, guid: ef1254dcecf214cef9e97ef4961014b5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Rock.004-bake
+    second: {fileID: 2100000, guid: fe8a845ec8d7ac761b52dad5aa2042b7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Rock.003-bake
+    second: {fileID: 2100000, guid: ce9de81b428e16915b765899ec188f5a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Rock.002-bake
+    second: {fileID: 2100000, guid: b466bc30f5116536a86f136c865908a8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Rock.001-bake
+    second: {fileID: 2100000, guid: b3bee63dcad08ea8887b642c0f50e7f2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Rock-bake
+    second: {fileID: 2100000, guid: 8ac4bcbeae02a4328b273dbe1a86de76, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Paint
+    second: {fileID: 2100000, guid: 31cc094d2c2039649b24a10b6a4012a1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Leaves-bake
+    second: {fileID: 2100000, guid: 924e3f62d8fed344f9b0f9dcff7ba095, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Ground-bake
+    second: {fileID: 2100000, guid: 4e62775f3c31a5145bbfd164f21c3126, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Glow
+    second: {fileID: 2100000, guid: fe437c222961b7c48802887e797de346, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Crystal_Small.072-bake
+    second: {fileID: 2100000, guid: 6abf20c03d25562439c68ecf98e70a14, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Crystal_Small.071-bake
+    second: {fileID: 2100000, guid: 598b0fc3af723824b9b0f724543e5634, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Crystal_Small.070-bake
+    second: {fileID: 2100000, guid: 01659bd22a2261749b7c7c72e72d056d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Crystal_Small.069-bake
+    second: {fileID: 2100000, guid: 3de957f9f63b1c245a056e60df7a81fb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Crystal_Small.068-bake
+    second: {fileID: 2100000, guid: 03e33e2830ba8754ab13bdae2ad27e73, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Crystal_Small.067-bake
+    second: {fileID: 2100000, guid: 5bb6445757e78864ab199e03d64a415a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Crystal_Small.066-bake
+    second: {fileID: 2100000, guid: 392ca353bc2fe4143b99705bce5175c0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Crystal_Small.065-bake
+    second: {fileID: 2100000, guid: e0fb44ba7c88225468d2ffef8d4b5767, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Crystal_Small.064-bake
+    second: {fileID: 2100000, guid: e7de77a40b437da43868e03547630a9e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Crystal_Small.063-bake
+    second: {fileID: 2100000, guid: a412e9a036d97e242bbe4bfbaaa62574, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Crystal_Small.062-bake
+    second: {fileID: 2100000, guid: ff32501eb36629d41ac30e256f69c3c7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Crystal_Small.061-bake
+    second: {fileID: 2100000, guid: 5387f37f488c7fa45b5fe063a9a7b96c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Crystal_Small.060-bake
+    second: {fileID: 2100000, guid: 94010d0825f6fa945b39cd5ebdb20bac, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Crystal_Small.059-bake
+    second: {fileID: 2100000, guid: 4c4968c155007f94ca0b7af7756e3054, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Crystal_Small.058-bake
+    second: {fileID: 2100000, guid: 8dae6ca12e27b954ea162d0c20657416, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Crystal_Small.057-bake
+    second: {fileID: 2100000, guid: bc55a07daa60a41449b4b734004a39a5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Crystal_Small.056-bake
+    second: {fileID: 2100000, guid: dc7f8469b9794d346b6cd5cf11f996c7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Crystal_Small.055-bake
+    second: {fileID: 2100000, guid: c1015c7e253a7d24e8522515e03c8819, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Crystal_Small.054-bake
+    second: {fileID: 2100000, guid: 1a89acf68c9543641a19e54a8552a283, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Crystal_Small.053-bake
+    second: {fileID: 2100000, guid: 0e5a2138afb597a4dadc6e86d20d23f3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Crystal_Small.052-bake
+    second: {fileID: 2100000, guid: a879ad4f8d0ab5a4b93efcacf65d8a37, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Crystal_Small.051-bake
+    second: {fileID: 2100000, guid: b3b10c0d11f2cab44b8d06c1c6686193, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Crystal_Small.050-bake
+    second: {fileID: 2100000, guid: 2c3eade9ffc18fb4e96cafe108ba3b9d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Crystal_Small.049-bake
+    second: {fileID: 2100000, guid: b02538f7ab94e1d45b17862b6105dc39, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Crystal_Small.048-bake
+    second: {fileID: 2100000, guid: f352379d48d20674382351aa450eb5e1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Crystal_Small.047-bake
+    second: {fileID: 2100000, guid: 6d90210c89d2e1347abaf90a8fbfb543, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Crystal_Small.046-bake
+    second: {fileID: 2100000, guid: fce90401c2ddb7041a58aa5ffcb1e76d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Crystal_Small.045-bake
+    second: {fileID: 2100000, guid: 0b24ee1f9716f214c9d71a33e996f72b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Crystal_Small.044-bake
+    second: {fileID: 2100000, guid: 3f744dec988d3924cb77e056ce431e79, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Crystal_Small.043-bake
+    second: {fileID: 2100000, guid: 985505a23dc3faa4aa21d6f783870f99, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Crystal_Small.042-bake
+    second: {fileID: 2100000, guid: 8f2989eef1688124ba54438c9e66bf70, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Crystal_Small.041-bake
+    second: {fileID: 2100000, guid: 99f8da2f1e651874b859d4a65f62a2c9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Crystal_Small.040-bake
+    second: {fileID: 2100000, guid: bef50ff52ec860c4694bed596f5cb480, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Crystal_Small.039-bake
+    second: {fileID: 2100000, guid: d1796b212680d3445a5fdac375a18705, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Crystal_Small.038-bake
+    second: {fileID: 2100000, guid: d13f4cf130587a54d8a8897bd2a26cd2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Crystal_Small.037-bake
+    second: {fileID: 2100000, guid: f66e90902acf4fc468b801eb8cd46021, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Crystal_Small.036-bake
+    second: {fileID: 2100000, guid: ae5fef266fae4e545b1c3fc70b35863b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Crystal_Small.035-bake
+    second: {fileID: 2100000, guid: d54425cf0bf3bc94b8aa1fec510ac8d8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Crystal_Small.034-bake
+    second: {fileID: 2100000, guid: c0f6e6679a0fbfa4e890c4c26b39483f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Crystal_Small.033-bake
+    second: {fileID: 2100000, guid: 0976badcaaf4c374689e884fc68d266b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Crystal_Small.032-bake
+    second: {fileID: 2100000, guid: ce00121231d0ec545b4c7e8284508723, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Crystal_Small.031-bake
+    second: {fileID: 2100000, guid: 261c8fa6fbef33a4d9d034e843fc1a3e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Crystal_Small.030-bake
+    second: {fileID: 2100000, guid: deb7d25504851ea4c9dfe422b0904519, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Crystal_Small.029-bake
+    second: {fileID: 2100000, guid: 63fa96a6ffcb9e143a44980dc5881d2f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Crystal_Small.028-bake
+    second: {fileID: 2100000, guid: 1374fb16702750d46887e0acafed6848, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Crystal_Small.027-bake
+    second: {fileID: 2100000, guid: d5370ee681a003b43860a88068fc9c3e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Crystal_Small.026-bake
+    second: {fileID: 2100000, guid: fe566ae1bc457e94e8afdc6a43293661, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Crystal_Small.025-bake
+    second: {fileID: 2100000, guid: 231a16d3a01a22343a2c4361642297f1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Crystal_Small.024-bake
+    second: {fileID: 2100000, guid: 541f32ddd3942a64294b97a064757ef4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Crystal_Small.023-bake
+    second: {fileID: 2100000, guid: 8d4f3fcf5b29e7441ba4584610ff7ca6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Crystal_Small.022-bake
+    second: {fileID: 2100000, guid: 4bc7f5ca59b1fcc4bb374637628236c1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Crystal_Small.021-bake
+    second: {fileID: 2100000, guid: 92738fe2d85010c4085fc2c662b30fbf, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Crystal_Small.020-bake
+    second: {fileID: 2100000, guid: d0ccb748fcb17a447aacd68c46cb7615, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Crystal_Small.019-bake
+    second: {fileID: 2100000, guid: eb74a93eeddda834bbdbbe8510571146, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Crystal_Small.018-bake
+    second: {fileID: 2100000, guid: 06229ed545884614e8d9406d07abca0b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Crystal_Small.017-bake
+    second: {fileID: 2100000, guid: 22a6a7a80a193224cba95c8ebf72c772, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Crystal_Small.016-bake
+    second: {fileID: 2100000, guid: 028db0170b2f6cd45bb62b8298e81a82, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Crystal_Small.015-bake
+    second: {fileID: 2100000, guid: 23775fcc35e19814e9deab7708308171, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Crystal_Small.014-bake
+    second: {fileID: 2100000, guid: 247b3ce6cf81e9f4caca549c8676750b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Crystal_Small.013-bake
+    second: {fileID: 2100000, guid: 411a10df3dfd46e429a4d08eb8c737ce, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Crystal_Small.012-bake
+    second: {fileID: 2100000, guid: f3329669c4add0a4e9e13c75cf2cfcc5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Crystal_Small.011-bake
+    second: {fileID: 2100000, guid: 946ebac9c336f02458a7941a01eaa2dd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Crystal_Small.010-bake
+    second: {fileID: 2100000, guid: 045dd0c04542f414187014af3e0963c6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Crystal_Small.009-bake
+    second: {fileID: 2100000, guid: 55508e114598fe949a178255dd48f912, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Crystal_Small-bake
+    second: {fileID: 2100000, guid: db79a69fa827c0e7fbc59fff34a5993b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Crystal_Outer.001-bake
+    second: {fileID: 2100000, guid: 780278232b1d34d6c9894eac4fe09311, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Crystal_Outer-bake
+    second: {fileID: 2100000, guid: 8f37f01f14bcb996291122a2a46e8a3e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Crystal_Inner.001-bake
+    second: {fileID: 2100000, guid: ca335ebf91cb80901900d3ac930f4172, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Crystal_Inner-bake
+    second: {fileID: 2100000, guid: fb6e5e8508141402c84d7f4f6b348dc7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CrystalOuter
+    second: {fileID: 2100000, guid: 0c4a5153b72bf2e468f53b00b4ee3037, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

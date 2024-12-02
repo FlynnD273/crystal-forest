@@ -124,6 +124,10 @@ start_time = time()
 for i, obj in enumerate(objs):
     if is_shutdown:
         break
+    avg = (time() - start_time) / (i + 1)
+    print(
+        f"\rBaking {obj.name} | {i + 1}/{len(objs)} Time left: {timedelta(seconds= avg * (len(objs) - i))}{' '*10}"
+    )
 
     bpy.ops.object.select_all(action="DESELECT")
     bpy.context.view_layer.objects.active = obj
@@ -145,11 +149,6 @@ for i, obj in enumerate(objs):
     if obj.material_slots is None or len(obj.material_slots) == 0:
         print("Skipping", obj.name)
         continue
-
-    avg = (time() - start_time) / (i + 1)
-    print(
-        f"\rBaking {obj.name} | {i + 1}/{len(objs)} Time left: {timedelta(seconds= avg * (len(objs) - i))}{' '*10}"
-    )
 
     if is_shutdown:
         break
@@ -339,7 +338,7 @@ if not is_shutdown:
     for obj in bpy.context.visible_objects:
         obj.select_set(True)
 
-    bpy.ops.export_scene.fbx(filepath=os.path.join(folder, f"FBX-{name}.fbx"))
+    bpy.ops.export_scene.fbx(filepath=os.path.join(folder, f"FBX-{name}.fbx"), use_visible= True)
     if len(problems) > 0:
         print("Could not parse materials:")
         for p in problems:
