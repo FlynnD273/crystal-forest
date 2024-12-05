@@ -4,10 +4,16 @@ using UnityEngine;
 public class LightSpawner : MonoBehaviour
 {
     public GameObject SmallLight;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    public GameObject BigLight;
+
     void Start()
     {
-        foreach (Transform child in transform)
+        ProcessChildren(transform);
+    }
+
+    void ProcessChildren(Transform parent)
+    {
+        foreach (Transform child in parent)
         {
             if (child.name.StartsWith("Crystal_Small"))
             {
@@ -18,6 +24,16 @@ public class LightSpawner : MonoBehaviour
                 newLight.transform.position = child.transform.position;
                 newLight.transform.parent = child.transform;
             }
+            else if (child.name.StartsWith("Crystal_Inner"))
+            {
+                var renderer = child.GetComponent<MeshRenderer>();
+                var mat = renderer.sharedMaterial;
+                mat.SetInt("_Emit", 1);
+                var newLight = Instantiate(BigLight);
+                newLight.transform.position = child.transform.position;
+                newLight.transform.parent = child.transform;
+            }
+            ProcessChildren(child);
         }
     }
 }
