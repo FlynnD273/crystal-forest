@@ -138,8 +138,10 @@ for i, obj in enumerate(objs):
     )
 
     for modifier in obj.modifiers:
-        print("applying modifier", modifier.name)
-        bpy.ops.object.modifier_apply(modifier=modifier.name)
+        break
+        if "Armature" not in modifier.name:
+            print("applying modifier", modifier.name)
+            bpy.ops.object.modifier_apply(modifier=modifier.name)
 
     for mat in obj.material_slots[:]:
         if not mat:
@@ -273,7 +275,6 @@ for i, obj in enumerate(objs):
         do_local_ids=True, do_linked_ids=True, do_recursive=True
     )
 
-
 if not is_shutdown:
     start_time = time()
     for i, obj in enumerate(to_process):
@@ -343,5 +344,5 @@ if not is_shutdown:
         print("Could not parse materials:")
         for p in problems:
             print(p)
-    bpy.ops.wm.revert_mainfile()
+#    bpy.ops.wm.revert_mainfile()
 

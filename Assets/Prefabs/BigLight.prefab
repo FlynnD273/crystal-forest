@@ -137,4 +137,4 @@ MonoBehaviour:
   MinDist: 5
   MaxDist: 20
   Dim: 3
-  Bright: 20
+  Bright: 10

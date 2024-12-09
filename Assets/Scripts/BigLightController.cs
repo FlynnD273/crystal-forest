@@ -12,23 +12,45 @@ public class BigLightController : MonoBehaviour
     private Light _light;
     private Material _material;
 
-    void Start()
+    private ExpDamp brightness;
+    private bool isCharged = false;
+
+    internal void Start()
     {
+        brightness = new ExpDamp(0, 0, () =>
+      {
+          _light.intensity = brightness.Value;
+          _material.SetFloat("_Emit_Brightness", brightness.Value / 10);
+      });
+
         _player = GameObject.FindGameObjectsWithTag("Player").First().transform;
         _light = GetComponent<Light>();
-        var renderer = transform.parent.GetComponent<MeshRenderer>();
+        MeshRenderer renderer = transform.parent.GetComponent<MeshRenderer>();
         _material = renderer.sharedMaterial;
     }
 
-    void Update()
+    internal void Update()
     {
-        Vector3 offset = _player.position - transform.position;
-        offset = new Vector2(offset.x, offset.z);
-        float latDist = offset.sqrMagnitude;
-        float maxSqr = MaxDist * MaxDist;
-        float minSqr = MinDist * MinDist;
-        latDist = (Mathf.Clamp(latDist, minSqr, maxSqr) - minSqr) / (maxSqr - minSqr);
-        _light.intensity = Mathf.Lerp(Bright, Dim, latDist);
-        _material.SetFloat("_Emit_Brightness", Mathf.Lerp(10, 0.1f, latDist));
+        if (!isCharged)
+        {
+            Vector3 offset = _player.position - transform.position;
+            if (offset.sqrMagnitude < 4)
+            {
+                isCharged = true;
+                brightness.TargetValue = 50;
+                brightness.Value = 10000;
+            }
+            offset = new Vector2(offset.x, offset.z);
+            float latDist = offset.sqrMagnitude;
+            float maxSqr = MaxDist * MaxDist;
+            float minSqr = MinDist * MinDist;
+            latDist = (Mathf.Clamp(latDist, minSqr, maxSqr) - minSqr) / (maxSqr - minSqr);
+            _light.intensity = Mathf.Lerp(Bright, Dim, latDist);
+            _material.SetFloat("_Emit_Brightness", Mathf.Lerp(10, 0.1f, latDist));
+        }
+        else
+        {
+            _ = brightness.Next(3f, Time.deltaTime);
+        }
     }
 }
