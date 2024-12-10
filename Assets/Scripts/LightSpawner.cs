@@ -6,10 +6,12 @@ public class LightSpawner : MonoBehaviour
 {
     public GameObject SmallLight;
     public GameObject BigLight;
+    public GameObject Bunny;
+    public int BunnyCount;
     public GameObject Ground;
 
 
-    internal void Start()
+    void Start()
     {
         IEnumerable<GameObject> allObjects = FindObjectsByType<GameObject>(FindObjectsSortMode.None).Where(static x => x.activeInHierarchy);
         bool shouldInit = true;
@@ -28,21 +30,12 @@ public class LightSpawner : MonoBehaviour
 
             if (obj.name.StartsWith("Crystal_Small"))
             {
-                obj.GetComponent<MeshRenderer>().sharedMaterial.SetInt("_Emit", 1);
                 GameObject newLight = Instantiate(SmallLight);
                 newLight.transform.position = obj.transform.position;
                 newLight.transform.parent = obj.transform;
             }
             else if (obj.name.StartsWith("Crystal_Inner"))
             {
-                obj.GetComponent<MeshRenderer>().sharedMaterial.SetInt("_Emit", 1);
-                GameObject newLight = Instantiate(BigLight);
-                newLight.transform.position = obj.transform.position;
-                newLight.transform.parent = obj.transform;
-            }
-            else if (obj.name.StartsWith("Bunny"))
-            {
-                obj.GetComponent<MeshRenderer>().sharedMaterial.SetInt("_Emit", 1);
                 GameObject newLight = Instantiate(BigLight);
                 newLight.transform.position = obj.transform.position;
                 newLight.transform.parent = obj.transform;
@@ -65,35 +58,11 @@ public class LightSpawner : MonoBehaviour
                 groundPiece.transform.position = new Vector3(x, 0, z);
             }
         }
-        ProcessChildren(transform);
-    }
 
-    internal void ProcessChildren(Transform parent)
-    {
-        foreach (Transform child in parent)
+        for (int i = 0; i < BunnyCount; i++)
         {
-            if (child.name.StartsWith("Crystal_Small"))
-            {
-                child.GetComponent<MeshRenderer>().sharedMaterial.SetInt("_Emit", 1);
-                GameObject newLight = Instantiate(SmallLight);
-                newLight.transform.position = child.transform.position;
-                newLight.transform.parent = child.transform;
-            }
-            else if (child.name.StartsWith("Crystal_Inner"))
-            {
-                child.GetComponent<MeshRenderer>().sharedMaterial.SetInt("_Emit", 1);
-                GameObject newLight = Instantiate(BigLight);
-                newLight.transform.position = child.transform.position;
-                newLight.transform.parent = child.transform;
-            }
-            else if (child.name.StartsWith("TreeTrunk"))
-            {
-                CapsuleCollider coll = child.gameObject.AddComponent<CapsuleCollider>();
-                coll.center = new Vector3(0, 0, 0.04f);
-                coll.radius = 0.01f;
-                coll.height = 0.1f;
-            }
-            ProcessChildren(child);
+            Rigidbody bunny = Instantiate(Bunny).GetComponent<Rigidbody>();
+            bunny.position = new Vector3(Random.Range(minDim.x, maxDim.x), 0, Random.Range(minDim.z, maxDim.z));
         }
     }
 }

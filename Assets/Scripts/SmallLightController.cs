@@ -12,15 +12,16 @@ public class SmallLightController : MonoBehaviour
     private Light _light;
     private Material _material;
 
-    internal void Start()
+    void Start()
     {
         _player = GameObject.FindGameObjectsWithTag("Player").First().transform;
         _light = GetComponent<Light>();
         MeshRenderer renderer = transform.parent.GetComponent<MeshRenderer>();
         _material = renderer.sharedMaterial;
+        _material.SetInt("_Emit", 1);
     }
 
-    internal void Update()
+    void Update()
     {
         Vector3 offset = _player.position - transform.position;
         offset = new Vector2(offset.x, offset.z);

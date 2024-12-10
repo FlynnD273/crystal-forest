@@ -15,21 +15,22 @@ public class BigLightController : MonoBehaviour
     private ExpDamp brightness;
     private bool isCharged = false;
 
-    internal void Start()
+    void Start()
     {
         brightness = new ExpDamp(0, 0, () =>
       {
-          _light.intensity = brightness.Value;
-          _material.SetFloat("_Emit_Brightness", brightness.Value / 10);
+          _light.intensity = brightness?.Value ?? 0;
+          _material.SetFloat("_Emit_Brightness", brightness?.Value ?? 0 / 10);
       });
 
         _player = GameObject.FindGameObjectsWithTag("Player").First().transform;
         _light = GetComponent<Light>();
         MeshRenderer renderer = transform.parent.GetComponent<MeshRenderer>();
         _material = renderer.sharedMaterial;
+        _material.SetInt("_Emit", 1);
     }
 
-    internal void Update()
+    void Update()
     {
         if (!isCharged)
         {

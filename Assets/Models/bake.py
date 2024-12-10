@@ -108,6 +108,40 @@ def obj_to_path(obj):
     return os.path.join(output_dir, img_name + ".png")
 
 
+def convert_attributes_to_vertex_groups(obj):
+    if obj.type != "MESH":
+        return
+
+    mesh = obj.data
+    attributes = mesh.attributes
+    if uvmap in attributes:
+        attributes.remove(attributes[uvmap])
+
+    for attr in attributes:
+        if (
+            attr.domain != "POINT"
+            or attr.data_type not in ["FLOAT", "BOOLEAN", "INT"]
+            or attr.name[0] == "."
+            or attr.name[0] == attr.name[0].lower()
+            or "UV" in attr.name
+        ):
+            continue
+
+        vertex_group = obj.vertex_groups.get(attr.name)
+        if not vertex_group:
+            vertex_group = obj.vertex_groups.new(name=attr.name)
+
+        for i, data in enumerate(attr.data):
+            if attr.data_type == "BOOLEAN":
+                weight = float(data.value)
+            elif attr.data_type == "INT":
+                weight = min(max(float(data.value), 0.0), 1.0)
+            else:
+                weight = data.value
+
+            vertex_group.add([i], weight, "REPLACE")
+
+
 obj_scl = [get_surface_area(o) for o in objs]
 max_surf = max(obj_scl)
 obj_scl = [s / max_surf for s in obj_scl]
@@ -138,10 +172,11 @@ for i, obj in enumerate(objs):
     )
 
     for modifier in obj.modifiers:
-        break
         if "Armature" not in modifier.name:
             print("applying modifier", modifier.name)
             bpy.ops.object.modifier_apply(modifier=modifier.name)
+
+    convert_attributes_to_vertex_groups(obj)
 
     for mat in obj.material_slots[:]:
         if not mat:
@@ -339,10 +374,12 @@ if not is_shutdown:
     for obj in bpy.context.visible_objects:
         obj.select_set(True)
 
-    bpy.ops.export_scene.fbx(filepath=os.path.join(folder, f"FBX-{name}.fbx"), use_visible= True)
+    bpy.ops.export_scene.fbx(
+        filepath=os.path.join(folder, f"FBX-{name}.fbx"), use_visible=True
+    )
     if len(problems) > 0:
         print("Could not parse materials:")
         for p in problems:
             print(p)
-#    bpy.ops.wm.revert_mainfile()
+    bpy.ops.wm.revert_mainfile()
 
