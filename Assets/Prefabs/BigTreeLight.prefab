@@ -138,3 +138,4 @@ MonoBehaviour:
   MaxDist: 50
   Dim: 1
   Bright: 10
+  OffDistance: 150

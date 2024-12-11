@@ -27,12 +27,21 @@ public class BunnyLightController : MonoBehaviour
     {
         Vector3 offset = _player.position - rb.position;
         offset = new Vector3(offset.x, 0, offset.z);
-        float latDist = offset.sqrMagnitude;
         float maxSqr = MaxDist * MaxDist;
-        float minSqr = MinDist * MinDist;
-        latDist = (Mathf.Clamp(latDist, minSqr, maxSqr) - minSqr) / (maxSqr - minSqr);
-        _light.intensity = Mathf.Lerp(Bright, Dim, latDist);
-        _material.SetFloat("_Emit_Brightness", Mathf.Lerp(1, 0.1f, latDist));
+        if (offset.sqrMagnitude > maxSqr)
+        {
+            _light.enabled = false;
+            _material.SetFloat("_Emit_Brightness", 0.1f);
+        }
+        else
+        {
+            _light.enabled = true;
+            float minSqr = MinDist * MinDist;
+            float latDist = offset.sqrMagnitude;
+            latDist = (Mathf.Clamp(latDist, minSqr, maxSqr) - minSqr) / (maxSqr - minSqr);
+            _light.intensity = Mathf.Lerp(Bright, Dim, latDist);
+            _material.SetFloat("_Emit_Brightness", Mathf.Lerp(1, 0.1f, latDist));
+        }
     }
 }
 
