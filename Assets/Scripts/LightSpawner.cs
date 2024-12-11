@@ -6,6 +6,7 @@ public class LightSpawner : MonoBehaviour
 {
     public GameObject SmallLight;
     public GameObject BigLight;
+    public GameObject BigTreeLight;
     public GameObject Bunny;
     public int BunnyCount;
     public GameObject Ground;
@@ -31,6 +32,12 @@ public class LightSpawner : MonoBehaviour
             if (obj.name.StartsWith("Crystal_Small"))
             {
                 GameObject newLight = Instantiate(SmallLight);
+                newLight.transform.position = obj.transform.position;
+                newLight.transform.parent = obj.transform;
+            }
+            else if (obj.name.StartsWith("BigTree_Crystal"))
+            {
+                GameObject newLight = Instantiate(BigTree_Crystal);
                 newLight.transform.position = obj.transform.position;
                 newLight.transform.parent = obj.transform;
             }
