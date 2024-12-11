@@ -25,7 +25,7 @@ public class BunnyController : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         anim = GetComponent<Animator>();
         rotation = new ExpDamp(0, Random.Range(0, 360), () => { rb.MoveRotation(Quaternion.Euler(0, rotation.Value, 0)); });
-        jumpInterval = Random.Range(JumpIntervalMin, JumpIntervalMax);
+        jumpInterval = Random.Range(0, JumpIntervalMax);
     }
 
     void FixedUpdate()

@@ -81,7 +81,12 @@ public class LightSpawner : MonoBehaviour
         for (int i = 0; i < BunnyCount; i++)
         {
             Rigidbody bunny = Instantiate(Bunny).GetComponent<Rigidbody>();
-            bunny.position = new Vector3(Random.Range(minDim.x, maxDim.x), 0, Random.Range(minDim.z, maxDim.z));
+            Vector3 pos;
+            do
+            {
+                pos = new Vector3(Random.Range(minDim.x, maxDim.x), 0, Random.Range(minDim.z, maxDim.z));
+            } while (_noTrees.bounds.Contains(pos));
+            bunny.position = pos;
         }
     }
 }

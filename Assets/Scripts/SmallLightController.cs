@@ -15,7 +15,7 @@ public class SmallLightController : MonoBehaviour
     {
         _player = GameObject.FindGameObjectsWithTag("Player").First().transform;
         _light = GetComponent<Light>();
-        MeshRenderer renderer = transform.parent.GetComponent<MeshRenderer>();
+        MeshRenderer renderer = transform.parent?.GetComponent<MeshRenderer>();
         if (renderer != null)
         {
             _material = renderer.sharedMaterial;
