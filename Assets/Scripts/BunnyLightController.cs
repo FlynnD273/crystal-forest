@@ -5,7 +5,6 @@ public class BunnyLightController : MonoBehaviour
 {
     public float MinDist = 5;
     public float MaxDist = 20;
-    public float Dim = 3;
     public float Bright = 50;
 
     private Transform _player;
@@ -39,7 +38,7 @@ public class BunnyLightController : MonoBehaviour
             float minSqr = MinDist * MinDist;
             float latDist = offset.sqrMagnitude;
             latDist = (Mathf.Clamp(latDist, minSqr, maxSqr) - minSqr) / (maxSqr - minSqr);
-            _light.intensity = Mathf.Lerp(Bright, Dim, latDist);
+            _light.intensity = Mathf.Lerp(Bright, 0, latDist);
             _material.SetFloat("_Emit_Brightness", Mathf.Lerp(1, 0.1f, latDist));
         }
     }
