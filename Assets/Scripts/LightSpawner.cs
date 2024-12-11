@@ -37,7 +37,7 @@ public class LightSpawner : MonoBehaviour
             }
             else if (obj.name.StartsWith("BigTree_Crystal"))
             {
-                GameObject newLight = Instantiate(BigTree_Crystal);
+                GameObject newLight = Instantiate(BigTreeLight);
                 newLight.transform.position = obj.transform.position;
                 newLight.transform.parent = obj.transform;
             }
@@ -62,6 +62,9 @@ public class LightSpawner : MonoBehaviour
             for (int z = (int)minDim.z; z < maxDim.z; z += 50)
             {
                 GameObject groundPiece = Instantiate(Ground);
+                BoxCollider coll = groundPiece.AddComponent<BoxCollider>();
+                coll.center = new Vector3(0, 0, -0.1f);
+                coll.size = new Vector3(0.8f, 0.8f, 0.2f);
                 groundPiece.transform.position = new Vector3(x, 0, z);
             }
         }
