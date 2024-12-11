@@ -10,25 +10,31 @@ public class LightSpawner : MonoBehaviour
     public GameObject Bunny;
     public int BunnyCount;
     public GameObject Ground;
-
+    public float Width;
+    public float Depth;
+    public GameObject[] Trees;
+    public int TreeCount;
 
     void Start()
     {
+        Collider _noTrees = GetComponent<Collider>();
+        Vector3 minDim = new Vector3(-Width / 2, 0, -Depth / 2);
+        Vector3 maxDim = new Vector3(Width / 2, 0, Depth / 2);
+        for (int i = 0; i < TreeCount; i++)
+        {
+            var obj = Instantiate(Trees[Random.Range(0, Trees.Length)]);
+            Vector3 pos;
+            do
+            {
+                pos = new Vector3(Random.Range(minDim.x, maxDim.x), 0, Random.Range(minDim.z, maxDim.z));
+            } while (_noTrees.bounds.Contains(pos));
+            obj.transform.position = pos;
+            obj.transform.rotation = Quaternion.EulerAngles(0, Random.Range(0, 360f), 0);
+        }
         IEnumerable<GameObject> allObjects = FindObjectsByType<GameObject>(FindObjectsSortMode.None).Where(static x => x.activeInHierarchy);
         bool shouldInit = true;
-        Vector3 minDim = Vector3.zero;
-        Vector3 maxDim = Vector3.zero;
         foreach (GameObject obj in allObjects)
         {
-            if (shouldInit)
-            {
-                shouldInit = false;
-                minDim = obj.transform.position;
-                maxDim = obj.transform.position;
-            }
-            minDim = Vector3.Min(minDim, obj.transform.position);
-            maxDim = Vector3.Max(maxDim, obj.transform.position);
-
             if (obj.name.StartsWith("Crystal_Small"))
             {
                 GameObject newLight = Instantiate(SmallLight);
@@ -53,10 +59,9 @@ public class LightSpawner : MonoBehaviour
                 coll.center = new Vector3(0, 0, 0.04f);
                 coll.radius = 0.01f;
                 coll.height = 0.1f;
+                coll.direction = 2;
             }
         }
-        minDim -= Vector3.one * 50;
-        maxDim += Vector3.one * 50;
         for (int x = (int)minDim.x; x < maxDim.x; x += 50)
         {
             for (int z = (int)minDim.z; z < maxDim.z; z += 50)
@@ -74,5 +79,6 @@ public class LightSpawner : MonoBehaviour
             Rigidbody bunny = Instantiate(Bunny).GetComponent<Rigidbody>();
             bunny.position = new Vector3(Random.Range(minDim.x, maxDim.x), 0, Random.Range(minDim.z, maxDim.z));
         }
+
     }
 }

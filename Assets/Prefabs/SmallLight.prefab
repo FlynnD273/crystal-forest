@@ -136,5 +136,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MinDist: 5
   MaxDist: 20
-  Dim: 0.1
+  Dim: 0
   Bright: 10
+  OffDistance: 22
