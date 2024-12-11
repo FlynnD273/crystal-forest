@@ -15,8 +15,12 @@ public class LightSpawner : MonoBehaviour
     public GameObject[] Trees;
     public int TreeCount;
 
+    private IEnumerable<GameObject> allObjects;
+    private Transform _player;
+
     void Start()
     {
+        _player = GameObject.FindGameObjectsWithTag("Player").First().transform;
         Collider _noTrees = GetComponent<Collider>();
         Vector3 minDim = new Vector3(-Width / 2, 0, -Depth / 2);
         Vector3 maxDim = new Vector3(Width / 2, 0, Depth / 2);
@@ -31,7 +35,7 @@ public class LightSpawner : MonoBehaviour
             obj.transform.position = pos;
             obj.transform.rotation = Quaternion.EulerAngles(0, Random.Range(0, 360f), 0);
         }
-        IEnumerable<GameObject> allObjects = FindObjectsByType<GameObject>(FindObjectsSortMode.None).Where(static x => x.activeInHierarchy);
+        allObjects = FindObjectsByType<GameObject>(FindObjectsSortMode.None).Where(static x => x.activeInHierarchy);
         bool shouldInit = true;
         foreach (GameObject obj in allObjects)
         {
@@ -79,6 +83,5 @@ public class LightSpawner : MonoBehaviour
             Rigidbody bunny = Instantiate(Bunny).GetComponent<Rigidbody>();
             bunny.position = new Vector3(Random.Range(minDim.x, maxDim.x), 0, Random.Range(minDim.z, maxDim.z));
         }
-
     }
 }
