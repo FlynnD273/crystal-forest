@@ -40,6 +40,7 @@ public class BigLightController : MonoBehaviour
                 isCharged = true;
                 brightness.TargetValue = 50;
                 brightness.Value = 10000;
+                GetComponent<AudioSource>().Play();
             }
             offset = new Vector2(offset.x, offset.z);
             float latDist = offset.sqrMagnitude;

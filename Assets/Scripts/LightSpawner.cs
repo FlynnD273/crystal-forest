@@ -14,6 +14,7 @@ public class LightSpawner : MonoBehaviour
     public float Depth;
     public GameObject[] Trees;
     public int TreeCount;
+    public AudioClip CrystalActivateClip;
 
     private IEnumerable<GameObject> allObjects;
     private Transform _player;
@@ -56,6 +57,10 @@ public class LightSpawner : MonoBehaviour
                 GameObject newLight = Instantiate(BigLight);
                 newLight.transform.position = obj.transform.position;
                 newLight.transform.parent = obj.transform;
+                AudioSource src = newLight.AddComponent<AudioSource>();
+                src.spatialBlend = 1;
+                src.clip = CrystalActivateClip;
+                src.playOnAwake = false;
             }
             else if (obj.name.StartsWith("TreeTrunk"))
             {

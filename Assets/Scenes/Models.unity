@@ -754,6 +754,7 @@ MonoBehaviour:
   - {fileID: 919132149155446097, guid: 958d4eeac625c4b66bfe6e18770bfc16, type: 3}
   - {fileID: 919132149155446097, guid: 70a8169e57a77b0ea82aa96562ceaca4, type: 3}
   TreeCount: 300
+  CrystalActivateClip: {fileID: 8300000, guid: 477b4fd86ba5c03438901a2479483ac0, type: 3}
 --- !u!65 &1020510875
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -884,7 +885,7 @@ AudioSource:
   m_audioClip: {fileID: 8300000, guid: 33127504e440eb12ba8094137d362931, type: 3}
   m_Resource: {fileID: 8300000, guid: 33127504e440eb12ba8094137d362931, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.3
   m_Pitch: 1
   Loop: 1
   Mute: 0

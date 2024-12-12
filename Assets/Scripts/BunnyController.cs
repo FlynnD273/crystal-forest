@@ -13,6 +13,7 @@ public class BunnyController : MonoBehaviour
     private State state = State.Idle;
     private ExpDamp rotation;
     private float? rotationOverride = null;
+    private AudioSource audio;
 
     private enum State
     {
@@ -26,6 +27,7 @@ public class BunnyController : MonoBehaviour
         anim = GetComponent<Animator>();
         rotation = new ExpDamp(0, Random.Range(0, 360), () => { rb.MoveRotation(Quaternion.Euler(0, rotation.Value, 0)); });
         jumpInterval = Random.Range(0, JumpIntervalMax);
+        audio = GetComponent<AudioSource>();
     }
 
     void FixedUpdate()
@@ -44,6 +46,7 @@ public class BunnyController : MonoBehaviour
                     rotation.TargetValue += Random.Range(-90f, 90f);
                     anim.SetTrigger("Jump");
                     state = State.JumpInit;
+                    audio.PlayDelayed(0.3f);
                 }
                 break;
             case State.JumpInit:
